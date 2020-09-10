@@ -49,7 +49,7 @@ char Pop(Stack *p)
     return saida;
 
 }
-// tamanho de uma pilha 
+
 int lenStack(Stack *p)
 {
     int count = 1;
@@ -61,7 +61,7 @@ int lenStack(Stack *p)
   }
   return count;
 }
-// realiza a operação na pilha 
+
 void ope(float c1, float c2, char op, float *saida){
     
     if(op == '+'){
@@ -78,20 +78,19 @@ void ope(float c1, float c2, char op, float *saida){
     }
     
 }
-// calcula apartir de uma string o valor em rpn
+
 float calculadora(char *str)
 {
     Stack *p = inicializacao();
-
     float result;
 for(int i = 0; i < strlen(str); i++)
-{ // se o char for um numero 
+{
     if((int)str[i] - '0' >= 0 && (int)str[i] - '0' <= 9)
     {
-        
+        printf("\n é numero");
         Push(p,str[i]);
     }else {
-        // caso o char nao é um numero 
+        printf("\n nao é numero");
         if(lenStack(p) >= 2)
         {
             float p1 = (float)Pop(p) - '0';
@@ -108,8 +107,14 @@ return result;
 
 int main (void)
 {
-    // calcular uma operação em rpn
-    Stack *p = inicializacao(); 
+    Stack *p = inicializacao();
+    Push(p, '7');
+    Push(p, '4');
+    Push(p, '1');
+    printf("%i, o tamanho da pilha \n", lenStack(p));
+    Pop(p);
+    Pop(p);
+    Pop(p);
     char *calcula = "14+3";
     printf("\n O valor calculado foi , %f \n", calculadora(calcula));
   

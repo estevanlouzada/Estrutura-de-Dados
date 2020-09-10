@@ -110,7 +110,7 @@ int main (void)
 {
     // calcular uma operação em rpn
     Stack *p = inicializacao(); 
-    char *calcula = "14+3";
+    char *calcula = "54-";
     printf("\n O valor calculado foi , %f \n", calculadora(calcula));
   
 }

@@ -71,6 +71,10 @@ int PushCondicional(Pilha *p, int valor)
 int main (void)
 {
   
+ 
+
+
+     
     Pilha *p;
    p = InicializaPilha();
    printf("%i",PushCondicional(p, 0) );
